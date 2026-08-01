@@ -28,6 +28,13 @@ public class Tree : MonoBehaviour
             return;
 
         player.HP -= 15;
+        UIManager.Instance.ShowNotiText($"HURT -15\nHP: {player.HP}");
+
+        if (player.HP <= 0)
+        {
+            player.HP = 0;
+            UIManager.Instance.ShowNotiText($"RIP\nPoints: {player.Point}");
+        }
     }
 
     private void OnCollisionExit(Collision collision)
