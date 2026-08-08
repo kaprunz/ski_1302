@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Finish : MonoBehaviour
+public class Flag : MonoBehaviour
 {
 
     private void OnTriggerEnter(Collider other)
@@ -10,7 +10,9 @@ public class Finish : MonoBehaviour
         if (p == null)
             return;
 
-        UIManager.Instance.ShowNotiText($"YOU WIN!!!!\nPoints: {p.Point}");
+        p.Point += 10;
+        UIManager.Instance.ShowNotiText($"Flag Collected!\nPoints: {p.Point}");
+        Destroy(gameObject);
 
     }
 }
