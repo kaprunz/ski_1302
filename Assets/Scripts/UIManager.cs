@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Player player;
 
+
     private void Awake()
     {
         Instance = this;
@@ -41,6 +42,8 @@ public class UIManager : MonoBehaviour
     {
         player.transform.position = new Vector3(0.38f, 87.5f, -85.4f);
         player.HP = 100;
+        player.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         ShowNotiText("Restart");
         ShowNotiText($"Your Points\n{player.Point}");
         Time.timeScale = 1f;
