@@ -12,7 +12,7 @@ public class Finish : MonoBehaviour
 
         UIManager.Instance.ShowNotiText($"YOU WIN!!!!\nPoints: {p.Point}");
         UIManager.Instance.ShowHideRestartButton(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.5f;
 
     }
 }
